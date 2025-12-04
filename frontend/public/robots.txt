@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noxusdynamics.vercel.app/sitemap.xml
