@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { Compass, Home, Phone, Users, Briefcase } from 'lucide-react'
 import { HoverBorderGradient } from './components/HoverBorderGradient'
 import { AnimeNavBar, type NavItem } from './components/AnimeNavBar'
@@ -339,7 +340,7 @@ function App() {
     const elements = document.querySelectorAll('[data-observe="true"]')
 
     elements.forEach((element) => {
-      const target = element as HTMLElement
+      const target = element as HTMLElementc
       target.style.opacity = '0'
       target.style.transform = 'translateY(30px)'
       target.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
@@ -868,6 +869,7 @@ function App() {
           </section>
         </div>
       </main>
+      <Analytics />
     </>
   )
 }
