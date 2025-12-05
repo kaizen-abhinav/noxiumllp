@@ -340,7 +340,7 @@ function App() {
     const elements = document.querySelectorAll('[data-observe="true"]')
 
     elements.forEach((element) => {
-      const target = element as HTMLElementc
+      const target = element as HTMLElement
       target.style.opacity = '0'
       target.style.transform = 'translateY(30px)'
       target.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
