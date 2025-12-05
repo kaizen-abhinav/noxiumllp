@@ -21,6 +21,14 @@
 }
 
 @font-face {
+  font-family: 'Kregan';
+  src: url('/fonts/Kregan/Kregan-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2'),
        url('/fonts/Satoshi/Satoshi-Regular.woff') format('woff');
@@ -175,7 +183,7 @@ html {
 }
 
 .anime-nav-logo {
-  font-family: 'Kihim', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Kregan', 'Kihim', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
   margin-right: 0.5rem;
