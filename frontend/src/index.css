@@ -13,8 +13,8 @@
 @font-face {
   font-family: 'Kihim';
   src: url('/fonts/Kihim/Kihim-Regular.woff2') format('woff2'),
-       url('/fonts/Kihim/Kihim-Regular.woff') format('woff'),
-       url('/fonts/Kihim/Kihim-Regular.ttf') format('truetype');
+    url('/fonts/Kihim/Kihim-Regular.woff') format('woff'),
+    url('/fonts/Kihim/Kihim-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2'),
-       url('/fonts/Satoshi/Satoshi-Regular.woff') format('woff');
+    url('/fonts/Satoshi/Satoshi-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Medium.woff2') format('woff2'),
-       url('/fonts/Satoshi/Satoshi-Medium.woff') format('woff');
+    url('/fonts/Satoshi/Satoshi-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -49,7 +49,7 @@
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Bold.woff2') format('woff2'),
-       url('/fonts/Satoshi/Satoshi-Bold.woff') format('woff');
+    url('/fonts/Satoshi/Satoshi-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -67,6 +67,14 @@
   font-family: 'Epilogue';
   src: url('/fonts/Epilogue/Epilogue-SemiBold.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Molgan';
+  src: url('/fonts/Molgan/MolganRegular-YqWj2.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -91,7 +99,7 @@ html {
   overflow: hidden;
 }
 
-.post-hero > section {
+.post-hero>section {
   position: relative;
   z-index: 1;
 }
@@ -183,7 +191,7 @@ html {
 }
 
 .anime-nav-logo {
-  font-family: 'Kregan', 'Kihim', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Molgan', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
   margin-right: 0.5rem;
@@ -381,9 +389,11 @@ html {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(100%);
     opacity: 0;
@@ -578,6 +588,15 @@ html {
   font-family: 'Kihim', 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+.section-title-molgan {
+  font-family: 'Molgan', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
 .text-rewind-wrapper {
   width: 100%;
   text-align: center;
@@ -595,11 +614,11 @@ html {
 }
 
 .about-subtitle {
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 400;
   letter-spacing: 0.05em;
   margin-bottom: 3rem;
-  color: #cccccc;
+  color: #e0e0e0;
 }
 
 .about-text {
@@ -609,11 +628,11 @@ html {
 }
 
 .about-text p {
-  font-size: 1rem;
-  line-height: 2.1;
-  font-weight: 300;
-  color: #d0d0d0;
-  letter-spacing: 0.01em;
+  font-size: 1.25rem;
+  line-height: 2;
+  font-weight: 400;
+  color: #e0e0e0;
+  letter-spacing: 0.02em;
 }
 
 /* Concepts Section */
@@ -917,9 +936,11 @@ html {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -935,9 +956,9 @@ html {
 .team-card {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 2rem;
-  border-radius: 16px;
+  gap: 2.5rem;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
@@ -955,8 +976,8 @@ html {
 }
 
 .team-photo-small {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
   border-radius: 50%;
   flex-shrink: 0;
@@ -978,16 +999,16 @@ html {
 }
 
 .team-name-small {
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 400;
   letter-spacing: 0.02em;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .team-title-small {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: #888888;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #aaaaaa;
   letter-spacing: 0.02em;
 }
 
@@ -1239,6 +1260,7 @@ html {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

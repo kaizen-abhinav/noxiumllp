@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Analytics } from '@vercel/analytics/react'
-import { Compass, Home, Phone, Users, Briefcase } from 'lucide-react'
+import { Compass, Home, Phone, Users, Briefcase, Instagram } from 'lucide-react'
 import { HoverBorderGradient } from './components/HoverBorderGradient'
 import { AnimeNavBar, type NavItem } from './components/AnimeNavBar'
 import { Tilt } from './components/Tilt'
 import { FloatingShader } from './components/FloatingShader'
-import { TextRewind } from './components/TextRewind'
+
 import { HandWrittenTitle } from './components/HandWrittenTitle'
-import { SparklesText } from './components/SparklesText'
+
 import { Typewriter } from './components/Typewriter'
 import emailjs from '@emailjs/browser'
 
@@ -16,12 +16,16 @@ type Founder = {
   nameLines: string[]
   role: string
   photo: string
+  linkedin?: string
+  instagram?: string
 }
 
 type TeamMember = {
   name: string
   title: string
   photo?: string
+  linkedin?: string
+  instagram?: string
 }
 
 const founders: Founder[] = [
@@ -29,28 +33,36 @@ const founders: Founder[] = [
     nameLines: ['Abhinav Varghese', 'Abraham'],
     role: 'Chief Executive Officer',
     photo: '/pictures/abhinav.jpeg',
+    linkedin: 'https://www.linkedin.com/in/abhinav-abraham-65a5ba224/',
+    instagram: 'https://www.instagram.com/abhinav.abe/',
   },
   {
     nameLines: ['Albin Chacko'],
     role: 'Chief Operating Officer',
     photo: '/pictures/albin.jpeg',
+    linkedin: 'https://www.linkedin.com/in/albin-chacko-7202b5327',
+    instagram: 'https://www.instagram.com/albin.ck_/',
   },
   {
     nameLines: ['Reuben Skariah'],
     role: 'Chief Financial Officer',
     photo: '/pictures/reubenskaria.jpeg',
+    linkedin: 'https://www.linkedin.com/in/reuben-skaria-792953326',
+    instagram: 'https://www.instagram.com/reuben._703_/',
   },
 ]
 
 const designTeam: TeamMember[] = [
-  { name: 'Aman RT', title: 'Chief Design Officer' },
-  { name: 'Abhirami M', title: 'Design Lead', photo: '/pictures/abhirami.jpeg' },
-  { name: 'Reuben Mathew', title: 'UX Designer' },
+  { name: 'Aman RT', title: 'Chief Design Officer', photo: '/pictures/aman.jpeg', linkedin: 'https://linkedin.com/in/aman-abdulla-200256327', instagram: 'https://www.instagram.com/_.a.m_n/' },
+  { name: 'Abhirami M', title: 'Design Lead', photo: '/pictures/abhirami.jpeg', linkedin: 'https://www.linkedin.com/in/abhirami-manoj-8402b8327/', instagram: 'https://www.instagram.com/abiebiee/' },
+  { name: 'Reuben Mathew', title: 'UX Designer', photo: '/pictures/reuben.jpeg', instagram: 'https://www.instagram.com/reuben7t/' },
+  { name: 'Hari', title: 'Designer', photo: '/pictures/hari.jpeg', instagram: 'https://www.instagram.com/______.hari_/' },
+  { name: 'Christy Roy', title: 'Designer', photo: '/pictures/christy.jpg', linkedin: 'https://www.linkedin.com/in/christy-roy-60989433b/', instagram: 'https://www.instagram.com/christy_o.o_/' },
 ]
 
 const techTeam: TeamMember[] = [
-  { name: 'Alvin VK', title: 'Chief Technology Officer', photo: '/pictures/Alvin.jpeg' },
-  { name: 'Allen Thomas', title: 'Tech Lead', photo: '/pictures/allen.jpeg' },
+  { name: 'Alvin VK', title: 'Chief Technology Officer', photo: '/pictures/Alvin.jpeg', linkedin: 'https://www.linkedin.com/in/alvin-vk/' },
+  { name: 'Allen Thomas', title: 'Tech Lead', photo: '/pictures/allen.jpeg', linkedin: 'https://www.linkedin.com/in/allen-thomas-alex-843537330/', instagram: 'https://www.instagram.com/allen_thomas_alex' },
 ]
 
 const teamSections = [
@@ -655,217 +667,209 @@ function App() {
           <FloatingShader />
 
           <section className="about" id="about">
-          <div className="about-content">
-            <TextRewind
-              text="NoxusDynamics"
-              className="section-title"
-              shadowColors={{
-                first: '#4c6ef5',
-                second: '#be4bdb',
-                third: '#f06595',
-                fourth: '#ff922b',
-                glow: '#ffb347',
-              }}
-            />
-            <p className="about-subtitle">Where our name comes from</p>
-            <div className="about-text">
-              <p>
-                Derived from "noxious" reimagined - a counterintuitive choice that reflects our
-                philosophy of challenging conventional wisdom and transforming perceived
-                limitations into breakthrough innovations.
-              </p>
-              <p>
-                We see our work as catalytic: disrupting stagnant approaches to robotics and
-                mechanical intelligence while preserving the essential principles of precision,
-                reliability, and human-centric design.
-              </p>
+            <div className="about-content">
+              <h1 className="section-title-molgan">NoxusDynamics</h1>
+              <p className="about-subtitle">Where our name comes from</p>
+              <div className="about-text">
+                <p>
+                  Derived from "noxious" reimagined - a counterintuitive choice that reflects our
+                  philosophy of challenging conventional wisdom and transforming perceived
+                  limitations into breakthrough innovations.
+                </p>
+                <p>
+                  We see our work as catalytic: disrupting stagnant approaches to robotics and
+                  mechanical intelligence while preserving the essential principles of precision,
+                  reliability, and human-centric design.
+                </p>
+              </div>
             </div>
-          </div>
           </section>
 
           <section className="concepts" id="what-we-do">
-          {conceptBlocks.map((concept) => (
-            <div
-              key={concept.number}
-              className={`concept-block concept-${concept.alignment}`}
-              data-observe="true"
-            >
-              <div className="concept-number">{concept.number}</div>
-              <h3 className="concept-title">{concept.title}</h3>
-              <p className="concept-text">{concept.text}</p>
-            </div>
-          ))}
+            {conceptBlocks.map((concept) => (
+              <div
+                key={concept.number}
+                className={`concept-block concept-${concept.alignment}`}
+                data-observe="true"
+              >
+                <div className="concept-number">{concept.number}</div>
+                <h3 className="concept-title">{concept.title}</h3>
+                <p className="concept-text">{concept.text}</p>
+              </div>
+            ))}
           </section>
 
           <section className="team" id="team">
-          <div className="founders-section">
-            <HandWrittenTitle title="Founders" />
-            <div className="founders-grid">
-              {founders.map((founder, index) => (
+            <div className="founders-section">
+              <HandWrittenTitle title="Founders" />
+              <div className="founders-grid">
+                {founders.map((founder, index) => (
+                  <div
+                    key={founder.nameLines.join('-')}
+                    className={`founder-card ${index === 0 ? 'founder-left' : index === 2 ? 'founder-right' : 'founder-center'}`}
+                    data-observe="true"
+                  >
+                    <Tilt className="photo-tilt">
+                      <div
+                        className="founder-photo"
+                        style={{
+                          backgroundImage: `url(${founder.photo})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+                    </Tilt>
+                    <h3 className="founder-name">
+                      {founder.nameLines.map((line, nameIndex) => (
+                        <span key={`${line}-${nameIndex}`}>
+                          {line}
+                          {nameIndex < founder.nameLines.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </h3>
+                    <p className="founder-role">{founder.role}</p>
+                    <div className="founder-social">
+                      {founder.linkedin && (
+                        <a href={founder.linkedin} className="social-icon" target="_blank" rel="noopener noreferrer">
+                          in
+                        </a>
+                      )}
+                      {founder.instagram && (
+                        <a href={founder.instagram} className="social-icon" target="_blank" rel="noopener noreferrer">
+                          <Instagram size={16} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="team-members-section">
+              {teamSections.map((section) => (
                 <div
-                  key={founder.nameLines.join('-')}
-                  className={`founder-card ${index === 0 ? 'founder-left' : index === 2 ? 'founder-right' : 'founder-center'}`}
-                  data-observe="true"
+                  className={`team-subsection ${section.reverse ? 'tech-team' : 'design-team'}`}
+                  key={section.label}
                 >
-                  <Tilt className="photo-tilt">
-                    <div
-                      className="founder-photo"
-                      style={{
-                        backgroundImage: `url(${founder.photo})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    />
-                  </Tilt>
-                  <h3 className="founder-name">
-                    {founder.nameLines.map((line, nameIndex) => (
-                      <span key={`${line}-${nameIndex}`}>
-                        {line}
-                        {nameIndex < founder.nameLines.length - 1 && <br />}
-                      </span>
+                  <div className="subsection-label">
+                    <span className="subsection-number">{section.number}</span>
+                    <h3 className="subsection-title">{section.label}</h3>
+                  </div>
+                  <div className="team-cards">
+                    {section.members.map((member) => (
+                      <div className="team-card" key={member.name} data-observe="true">
+                        {member.photo ? (
+                          <Tilt className="photo-tilt-small">
+                            <div
+                              className="team-photo-small"
+                              style={{
+                                backgroundImage: `url(${member.photo})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                              }}
+                            />
+                          </Tilt>
+                        ) : (
+                          <div className="team-photo-small" />
+                        )}
+                        <div className="team-info">
+                          <h4 className="team-name-small">{member.name}</h4>
+                          <p className="team-title-small">{member.title}</p>
+                        </div>
+                        {member.linkedin && (
+                          <a href={member.linkedin} className="social-icon-small" target="_blank" rel="noopener noreferrer">
+                            in
+                          </a>
+                        )}
+                        {member.instagram && (
+                          <a href={member.instagram} className="social-icon-small" target="_blank" rel="noopener noreferrer">
+                            <Instagram size={14} />
+                          </a>
+                        )}
+                      </div>
                     ))}
-                  </h3>
-                  <p className="founder-role">{founder.role}</p>
-                  <div className="founder-social">
-                    <a href="#" className="social-icon">
-                      in
-                    </a>
-                    <a href="#" className="social-icon">
-                      𝕏
-                    </a>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          <div className="team-members-section">
-            {teamSections.map((section) => (
-              <div
-                className={`team-subsection ${section.reverse ? 'tech-team' : 'design-team'}`}
-                key={section.label}
-              >
-                <div className="subsection-label">
-                  <span className="subsection-number">{section.number}</span>
-                  <SparklesText
-                    text={section.label}
-                    className="subsection-title"
-                    sparklesCount={12}
-                    colors={
-                      section.label === 'Design'
-                        ? { first: '#6fe4ff', second: '#ff9ee5' }
-                        : { first: '#7f8bff', second: '#26ffe6' }
-                    }
-                  />
-                </div>
-                <div className="team-cards">
-                  {section.members.map((member) => (
-                    <div className="team-card" key={member.name} data-observe="true">
-                      {member.photo ? (
-                        <Tilt className="photo-tilt-small">
-                          <div
-                            className="team-photo-small"
-                            style={{
-                              backgroundImage: `url(${member.photo})`,
-                              backgroundSize: 'cover',
-                              backgroundPosition: 'center',
-                            }}
-                          />
-                        </Tilt>
-                      ) : (
-                        <div className="team-photo-small" />
-                      )}
-                      <div className="team-info">
-                        <h4 className="team-name-small">{member.name}</h4>
-                        <p className="team-title-small">{member.title}</p>
-                      </div>
-                      <a href="#" className="social-icon-small">
-                        in
-                      </a>
-                    </div>
+            <div className="supported">
+              <div className="supported-box">
+                <h3 className="supported-title">Supported by:</h3>
+                <div className="supported-text">
+                  {supportedPrograms.map((program) => (
+                    <p key={program.join('-')}>
+                      {program.map((line, index) => (
+                        <span key={`${line}-${index}`}>
+                          {line}
+                          {index < program.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="supported">
-            <div className="supported-box">
-              <h3 className="supported-title">Supported by:</h3>
-              <div className="supported-text">
-                {supportedPrograms.map((program) => (
-                  <p key={program.join('-')}>
-                    {program.map((line, index) => (
-                      <span key={`${line}-${index}`}>
-                        {line}
-                        {index < program.length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
-                ))}
-              </div>
             </div>
-          </div>
           </section>
 
           <section className="portfolio" id="portfolio">
-          <h2 className="section-title portfolio-title">
-            <Typewriter
-              text="Portfolio"
-              className="typewriter-title"
-              speed={85}
-              deleteSpeed={40}
-              cursor="▌"
-            />
-          </h2>
-          <div className="portfolio-logos">
-            {portfolioLogos.map((label) => (
-              <div className="portfolio-logo" key={label} data-observe="true">
-                {label}
-              </div>
-            ))}
-          </div>
+            <h2 className="section-title portfolio-title">
+              <Typewriter
+                text="Portfolio"
+                className="typewriter-title"
+                speed={85}
+                deleteSpeed={40}
+                cursor="▌"
+              />
+            </h2>
+            <div className="portfolio-logos">
+              {portfolioLogos.map((label) => (
+                <div className="portfolio-logo" key={label} data-observe="true">
+                  {label}
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="contact" id="contact">
-          <div className="contact-container">
-            <div className="contact-left">
-              <h2 className="contact-title">
-                Let's build
-                <br />
-                something
-                <br />
-                meaningful.
-              </h2>
-              <p className="contact-description">
-                Whether you're looking to collaborate on cutting-edge robotics or explore
-                partnership opportunities, we're ready to push boundaries together.
-              </p>
-            </div>
-            <div className="contact-right">
-              <form
-                className="contact-form"
-                id="contactForm"
-                onSubmit={handleContactSubmit}
-                style={{ display: formVisible ? 'flex' : 'none' }}
-              >
-                <input type="text" name="name" placeholder="Name" required className="form-input" />
-                <input type="email" name="email" placeholder="Email" required className="form-input" />
-                <textarea name="message" placeholder="Message" required className="form-textarea" />
-                {submissionError && (
-                  <p className="form-error" role="alert">
-                    {submissionError}
-                  </p>
-                )}
-                <HoverBorderGradient type="submit" disabled={isSubmitting} aria-disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending…' : 'Send Message'}
-                </HoverBorderGradient>
-              </form>
-              <div className={`form-confirmation ${formVisible ? '' : 'show'}`} id="formConfirmation">
-                <p aria-live="polite">Thank you for reaching out. We'll be in touch soon.</p>
+            <div className="contact-container">
+              <div className="contact-left">
+                <h2 className="contact-title">
+                  Let's build
+                  <br />
+                  something
+                  <br />
+                  meaningful.
+                </h2>
+                <p className="contact-description">
+                  Whether you're looking to collaborate on cutting-edge robotics or explore
+                  partnership opportunities, we're ready to push boundaries together.
+                </p>
+              </div>
+              <div className="contact-right">
+                <form
+                  className="contact-form"
+                  id="contactForm"
+                  onSubmit={handleContactSubmit}
+                  style={{ display: formVisible ? 'flex' : 'none' }}
+                >
+                  <input type="text" name="name" placeholder="Name" required className="form-input" />
+                  <input type="email" name="email" placeholder="Email" required className="form-input" />
+                  <textarea name="message" placeholder="Message" required className="form-textarea" />
+                  {submissionError && (
+                    <p className="form-error" role="alert">
+                      {submissionError}
+                    </p>
+                  )}
+                  <HoverBorderGradient type="submit" disabled={isSubmitting} aria-disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
+                  </HoverBorderGradient>
+                </form>
+                <div className={`form-confirmation ${formVisible ? '' : 'show'}`} id="formConfirmation">
+                  <p aria-live="polite">Thank you for reaching out. We'll be in touch soon.</p>
+                </div>
               </div>
             </div>
-          </div>
           </section>
         </div>
       </main>
