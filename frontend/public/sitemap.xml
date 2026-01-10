@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://noxusdynamics.vercel.app/</loc>
+    <loc>https://noxusdynamics.tech/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://noxusdynamics.vercel.app/#about</loc>
+    <loc>https://noxusdynamics.tech/#about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://noxusdynamics.vercel.app/#what-we-do</loc>
+    <loc>https://noxusdynamics.tech/#what-we-do</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://noxusdynamics.vercel.app/#team</loc>
+    <loc>https://noxusdynamics.tech/#team</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://noxusdynamics.vercel.app/#portfolio</loc>
+    <loc>https://noxusdynamics.tech/#portfolio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://noxusdynamics.vercel.app/#contact</loc>
+    <loc>https://noxusdynamics.tech/#contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
