@@ -1420,4 +1420,342 @@ html {
   .team-card {
     padding: 1rem 1.5rem;
   }
+  
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  .text-rewind {
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Enhanced Mobile Optimizations for small screens */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .hero-description {
+    padding-bottom: 0.5rem;
+    max-width: 100%;
+  }
+
+  .hero-description p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .hero-explore {
+    font-size: 0.7rem;
+  }
+
+  .hero-footer {
+    left: 1.25rem;
+    bottom: 1.5rem;
+    font-size: 0.6rem;
+  }
+
+  .about {
+    padding: 4rem 1.25rem;
+    min-height: auto;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .about-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+  }
+
+  .concepts {
+    padding: 4rem 1.25rem;
+    gap: 6rem;
+  }
+
+  .concept-block {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .concept-left,
+  .concept-right {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .concept-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .concept-text {
+    font-size: 0.9rem;
+    line-height: 1.9;
+  }
+
+  .team {
+    padding: 4rem 1.25rem;
+  }
+
+  .founders-section {
+    margin-bottom: 6rem;
+  }
+
+  .handwritten-wrapper {
+    width: 100%;
+    min-height: 180px;
+    margin-bottom: 3rem;
+  }
+
+  .handwritten-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .handwritten-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+
+  .founders-grid {
+    gap: 2.5rem;
+  }
+
+  .founder-card {
+    padding: 1.75rem 1.25rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .founder-photo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.25rem;
+  }
+
+  .founder-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .founder-role {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .founder-social {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: 0.85rem;
+  }
+
+  .team-members-section {
+    gap: 4rem;
+  }
+
+  .team-subsection {
+    gap: 2rem;
+  }
+
+  .subsection-label {
+    min-width: auto;
+    padding-top: 0;
+  }
+
+  .subsection-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .team-cards {
+    gap: 1.25rem;
+  }
+
+  .team-card {
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .team-photo-small {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team-name-small {
+    font-size: 0.95rem;
+  }
+
+  .team-title-small {
+    font-size: 0.7rem;
+  }
+
+  .team-social-links {
+    gap: 0.5rem;
+  }
+
+  .social-icon-small {
+    font-size: 0.8rem;
+  }
+
+  .supported {
+    margin-top: 4rem;
+  }
+
+  .supported-box {
+    padding: 1.5rem;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .supported-title {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .supported-text p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .portfolio {
+    padding: 4rem 1.25rem;
+  }
+
+  .portfolio-title {
+    margin-bottom: 3rem;
+  }
+
+  .typewriter-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-logos {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .portfolio-logo {
+    font-size: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    min-width: 100%;
+    justify-content: center;
+  }
+
+  .contact {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .contact-container {
+    gap: 2.5rem;
+  }
+
+  .contact-left {
+    padding-right: 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-description {
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  .contact-form {
+    gap: 1.25rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.9rem;
+    padding: 0.875rem 0;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .hover-border-gradient-content {
+    padding: 0.875rem 2rem;
+    font-size: 0.8rem;
+  }
+
+  /* Reduce animation intensity on mobile for better performance */
+  .concept-block:hover {
+    transform: translateY(-3px);
+  }
+
+  .founder-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .team-card:hover,
+  .tech-team .team-card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Improve touch targets */
+  .anime-nav-item {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .anime-nav {
+    gap: 0.25rem;
+    padding: 0.4rem;
+  }
+}
+
+/* Team social links styling */
+.team-social-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .concept-block,
+  .founder-card,
+  .team-card,
+  .portfolio-logo {
+    transition: none;
+  }
+  
+  .concept-block:hover,
+  .founder-card:hover,
+  .team-card:hover {
+    transform: none;
+  }
 }

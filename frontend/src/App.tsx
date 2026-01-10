@@ -39,7 +39,7 @@ const founders: Founder[] = [
   {
     nameLines: ['Albin Chacko'],
     role: 'Chief Operating Officer',
-    photo: '/pictures/albin.jpeg',
+    photo: '/pictures/albin.png',
     linkedin: 'https://www.linkedin.com/in/albin-chacko-7202b5327',
     instagram: 'https://www.instagram.com/albin.ck_/',
   },
@@ -776,16 +776,18 @@ function App() {
                           <h4 className="team-name-small">{member.name}</h4>
                           <p className="team-title-small">{member.title}</p>
                         </div>
-                        {member.linkedin && (
-                          <a href={member.linkedin} className="social-icon-small" target="_blank" rel="noopener noreferrer">
-                            in
-                          </a>
-                        )}
-                        {member.instagram && (
-                          <a href={member.instagram} className="social-icon-small" target="_blank" rel="noopener noreferrer">
-                            <Instagram size={14} />
-                          </a>
-                        )}
+                        <div className="team-social-links">
+                          {member.linkedin && (
+                            <a href={member.linkedin} className="social-icon-small" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`}>
+                              in
+                            </a>
+                          )}
+                          {member.instagram && (
+                            <a href={member.instagram} className="social-icon-small" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} Instagram`}>
+                              <Instagram size={14} />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
