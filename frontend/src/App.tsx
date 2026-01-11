@@ -6,7 +6,7 @@ import { HoverBorderGradient } from './components/HoverBorderGradient'
 import { AnimeNavBar, type NavItem } from './components/AnimeNavBar'
 import { Tilt } from './components/Tilt'
 import { FloatingShader } from './components/FloatingShader'
-
+import { TextRewind } from './components/TextRewind'
 import { HandWrittenTitle } from './components/HandWrittenTitle'
 
 import { Typewriter } from './components/Typewriter'
@@ -38,7 +38,7 @@ const founders: Founder[] = [
   },
   {
     nameLines: ['Albin Chacko'],
-    role: 'Chief Operating Officer',
+    role: 'Chief Technical Officer',
     photo: '/pictures/albin.png',
     linkedin: 'https://www.linkedin.com/in/albin-chacko-7202b5327',
     instagram: 'https://www.instagram.com/albin.ck_/',
@@ -61,7 +61,7 @@ const designTeam: TeamMember[] = [
 ]
 
 const techTeam: TeamMember[] = [
-  { name: 'Alvin VK', title: 'Chief Technology Officer', photo: '/pictures/Alvin.jpeg', linkedin: 'https://www.linkedin.com/in/alvin-vk/' },
+  { name: 'Alvin VK', title: 'Chief Operating Officer', photo: '/pictures/Alvin.jpeg', linkedin: 'https://www.linkedin.com/in/alvin-vk/' },
   { name: 'Allen Thomas', title: 'Tech Lead', photo: '/pictures/allen.jpeg', linkedin: 'https://www.linkedin.com/in/allen-thomas-alex-843537330/', instagram: 'https://www.instagram.com/allen_thomas_alex' },
 ]
 
@@ -668,7 +668,17 @@ function App() {
 
           <section className="about" id="about">
             <div className="about-content">
-              <h1 className="section-title-molgan">NoxusDynamics</h1>
+              <TextRewind
+                text="NoxusDynamics"
+                className="section-title"
+                shadowColors={{
+                  first: '#4c6ef5',
+                  second: '#be4bdb',
+                  third: '#f06595',
+                  fourth: '#ff922b',
+                  glow: '#ffb347',
+                }}
+              />
               <p className="about-subtitle">Where our name comes from</p>
               <div className="about-text">
                 <p>

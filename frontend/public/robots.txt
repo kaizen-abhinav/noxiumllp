@@ -1,4 +1,42 @@
+# Noxus Dynamics - Robotics Innovation Lab
+# https://noxusdynamics.tech
+
 User-agent: *
 Allow: /
 
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /admin/
+
+# Allow important resources
+Allow: /favicon.png
+Allow: /og-preview.png
+Allow: /pictures/
+Allow: /fonts/
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://noxusdynamics.tech/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
