@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Analytics } from '@vercel/analytics/react'
-import { Compass, Home, Phone, Users, Briefcase, Instagram } from 'lucide-react'
+import { Compass, Home, Phone, Users, Briefcase, Instagram, Mail } from 'lucide-react'
 import { HoverBorderGradient } from './components/HoverBorderGradient'
 import { AnimeNavBar, type NavItem } from './components/AnimeNavBar'
 import { Tilt } from './components/Tilt'
@@ -30,18 +30,18 @@ type TeamMember = {
 
 const founders: Founder[] = [
   {
-    nameLines: ['Abhinav Varghese', 'Abraham'],
-    role: 'Chief Executive Officer',
-    photo: '/pictures/abhinav.jpeg',
-    linkedin: 'https://www.linkedin.com/in/abhinav-abraham-65a5ba224/',
-    instagram: 'https://www.instagram.com/abhinav.abe/',
-  },
-  {
     nameLines: ['Albin Chacko'],
     role: 'Chief Technical Officer',
     photo: '/pictures/albin.png',
     linkedin: 'https://www.linkedin.com/in/albin-chacko-7202b5327',
     instagram: 'https://www.instagram.com/albin.ck_/',
+  },
+  {
+    nameLines: ['Abhinav Varghese', 'Abraham'],
+    role: 'Chief Executive Officer',
+    photo: '/pictures/abhinav.jpeg',
+    linkedin: 'https://www.linkedin.com/in/abhinav-abraham-65a5ba224/',
+    instagram: 'https://www.instagram.com/abhinav.abe/',
   },
   {
     nameLines: ['Reuben Skariah'],
@@ -52,22 +52,14 @@ const founders: Founder[] = [
   },
 ]
 
-const designTeam: TeamMember[] = [
+const teamMembers: TeamMember[] = [
   { name: 'Aman RT', title: 'Chief Design Officer', photo: '/pictures/aman.jpeg', linkedin: 'https://linkedin.com/in/aman-abdulla-200256327', instagram: 'https://www.instagram.com/_.a.m_n/' },
-  { name: 'Abhirami M', title: 'Design Lead', photo: '/pictures/abhirami.jpeg', linkedin: 'https://www.linkedin.com/in/abhirami-manoj-8402b8327/', instagram: 'https://www.instagram.com/abiebiee/' },
-  { name: 'Reuben Mathew', title: 'UX Designer', photo: '/pictures/reuben.jpeg', instagram: 'https://www.instagram.com/reuben7t/' },
-  { name: 'Hari', title: 'Designer', photo: '/pictures/hari.jpeg', instagram: 'https://www.instagram.com/______.hari_/' },
-  { name: 'Christy Roy', title: 'Designer', photo: '/pictures/christy.jpg', linkedin: 'https://www.linkedin.com/in/christy-roy-60989433b/', instagram: 'https://www.instagram.com/christy_o.o_/' },
-]
-
-const techTeam: TeamMember[] = [
-  { name: 'Alvin VK', title: 'Chief Operating Officer', photo: '/pictures/Alvin.jpeg', linkedin: 'https://www.linkedin.com/in/alvin-vk/' },
-  { name: 'Allen Thomas', title: 'Tech Lead', photo: '/pictures/allen.jpeg', linkedin: 'https://www.linkedin.com/in/allen-thomas-alex-843537330/', instagram: 'https://www.instagram.com/allen_thomas_alex' },
-]
-
-const teamSections = [
-  { label: 'Design', number: '01', members: designTeam, reverse: false },
-  { label: 'Technology', number: '02', members: techTeam, reverse: true },
+  { name: 'Alvin VK', title: 'Chief Operating Officer', photo: '/pictures/Alvin.jpeg', linkedin: 'https://www.linkedin.com/in/alvin-vk/', instagram: 'https://www.instagram.com/vk__alvin/' },
+  { name: 'Abhirami M', title: '', photo: '/pictures/abhirami.jpeg', linkedin: 'https://www.linkedin.com/in/abhirami-manoj-8402b8327/', instagram: 'https://www.instagram.com/abiebiee/' },
+  { name: 'Reuben Mathew Thomas', title: '', photo: '/pictures/reuben.jpeg', linkedin: 'https://www.linkedin.com/in/reubenthomas236/', instagram: 'https://www.instagram.com/reuben7t/' },
+  { name: 'Hari', title: '', photo: '/pictures/hari.jpeg', linkedin: 'https://www.linkedin.com/in/harisankar-s-b047b6368/', instagram: 'https://www.instagram.com/______.hari_/' },
+  { name: 'Christy Roy', title: '', photo: '/pictures/christy.jpg', linkedin: 'https://www.linkedin.com/in/christy-roy-60989433b/', instagram: 'https://www.instagram.com/christy_o.o_/' },
+  { name: 'Allen Thomas', title: '', photo: '/pictures/allen.jpeg', linkedin: 'https://www.linkedin.com/in/allen-thomas-alex-843537330/', instagram: 'https://www.instagram.com/allen_thomas_alex' },
 ]
 
 const portfolioLogos = [
@@ -641,10 +633,10 @@ function App() {
           <canvas ref={canvasRef} className="hero-background" aria-hidden="true" />
           <div className="hero-content">
             <div className="hero-main">
-              <h1 className="hero-title">
-                Build at
+              <h1 className="hero-title hero-title-molgan">
+                <span className="hero-title-animated">Build at</span>
                 <br />
-                the edge.
+                <span className="hero-title-animated">the edge.</span>
               </h1>
               <div className="hero-description">
                 <p>
@@ -716,7 +708,7 @@ function App() {
                 {founders.map((founder, index) => (
                   <div
                     key={founder.nameLines.join('-')}
-                    className={`founder-card ${index === 0 ? 'founder-left' : index === 2 ? 'founder-right' : 'founder-center'}`}
+                    className={`founder-card ${index === 1 ? 'founder-center' : index === 0 ? 'founder-left' : 'founder-right'}`}
                     data-observe="true"
                   >
                     <Tilt className="photo-tilt">
@@ -740,13 +732,13 @@ function App() {
                     <p className="founder-role">{founder.role}</p>
                     <div className="founder-social">
                       {founder.linkedin && (
-                        <a href={founder.linkedin} className="social-icon" target="_blank" rel="noopener noreferrer">
+                        <a href={founder.linkedin} className="social-icon social-icon-lg" target="_blank" rel="noopener noreferrer">
                           in
                         </a>
                       )}
                       {founder.instagram && (
-                        <a href={founder.instagram} className="social-icon" target="_blank" rel="noopener noreferrer">
-                          <Instagram size={16} />
+                        <a href={founder.instagram} className="social-icon social-icon-lg" target="_blank" rel="noopener noreferrer">
+                          <Instagram size={22} />
                         </a>
                       )}
                     </div>
@@ -756,53 +748,47 @@ function App() {
             </div>
 
             <div className="team-members-section">
-              {teamSections.map((section) => (
-                <div
-                  className={`team-subsection ${section.reverse ? 'tech-team' : 'design-team'}`}
-                  key={section.label}
-                >
-                  <div className="subsection-label">
-                    <span className="subsection-number">{section.number}</span>
-                    <h3 className="subsection-title">{section.label}</h3>
-                  </div>
-                  <div className="team-cards">
-                    {section.members.map((member) => (
-                      <div className="team-card" key={member.name} data-observe="true">
-                        {member.photo ? (
-                          <Tilt className="photo-tilt-small">
-                            <div
-                              className="team-photo-small"
-                              style={{
-                                backgroundImage: `url(${member.photo})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                              }}
-                            />
-                          </Tilt>
-                        ) : (
-                          <div className="team-photo-small" />
-                        )}
-                        <div className="team-info">
-                          <h4 className="team-name-small">{member.name}</h4>
-                          <p className="team-title-small">{member.title}</p>
-                        </div>
-                        <div className="team-social-links">
-                          {member.linkedin && (
-                            <a href={member.linkedin} className="social-icon-small" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`}>
-                              in
-                            </a>
-                          )}
-                          {member.instagram && (
-                            <a href={member.instagram} className="social-icon-small" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} Instagram`}>
-                              <Instagram size={14} />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+              <div className="team-subsection our-team">
+                <div className="subsection-label">
+                  <h3 className="subsection-title">Our Team</h3>
                 </div>
-              ))}
+                <div className="team-cards team-cards-grid">
+                  {teamMembers.map((member) => (
+                    <div className="team-card" key={member.name} data-observe="true">
+                      {member.photo ? (
+                        <Tilt className="photo-tilt-small">
+                          <div
+                            className="team-photo-small"
+                            style={{
+                              backgroundImage: `url(${member.photo})`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                            }}
+                          />
+                        </Tilt>
+                      ) : (
+                        <div className="team-photo-small" />
+                      )}
+                      <div className="team-info">
+                        <h4 className="team-name-small">{member.name}</h4>
+                        {member.title && <p className="team-title-small">{member.title}</p>}
+                      </div>
+                      <div className="team-social-links">
+                        {member.linkedin && (
+                          <a href={member.linkedin} className="social-icon-small social-icon-lg" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`}>
+                            in
+                          </a>
+                        )}
+                        {member.instagram && (
+                          <a href={member.instagram} className="social-icon-small social-icon-lg" target="_blank" rel="noopener noreferrer" aria-label={`${member.name} Instagram`}>
+                            <Instagram size={18} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="supported">
@@ -857,6 +843,24 @@ function App() {
                   Whether you're looking to collaborate on cutting-edge robotics or explore
                   partnership opportunities, we're ready to push boundaries together.
                 </p>
+                <div className="contact-info">
+                  <a href="tel:+919562375601" className="contact-info-item">
+                    <span className="contact-info-icon"><Phone size={18} /></span>
+                    <span>+91 95623 75601</span>
+                  </a>
+                  <a href="mailto:noxusdynamics@gmail.com" className="contact-info-item">
+                    <span className="contact-info-icon"><Mail size={18} /></span>
+                    <span>noxusdynamics@gmail.com</span>
+                  </a>
+                  <a href="mailto:hello@noxusdynamics.tech" className="contact-info-item">
+                    <span className="contact-info-icon"><Mail size={18} /></span>
+                    <span>hello@noxusdynamics.tech</span>
+                  </a>
+                  <a href="https://www.instagram.com/noxusdynamics/" target="_blank" rel="noopener noreferrer" className="contact-info-item">
+                    <span className="contact-info-icon"><Instagram size={18} /></span>
+                    <span>@noxusdynamics</span>
+                  </a>
+                </div>
               </div>
               <div className="contact-right">
                 <form
