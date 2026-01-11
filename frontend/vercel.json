@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "noxusdynamics.vercel.app"
+        }
+      ],
+      "destination": "https://noxusdynamics.tech/$1",
+      "permanent": true
+    }
+  ]
+}
