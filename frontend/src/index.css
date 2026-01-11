@@ -525,6 +525,30 @@ html {
   text-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
 }
 
+.hero-title-molgan {
+  font-family: 'Molgan', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.hero-title-animated {
+  display: inline-block;
+  animation: hero-glow 3s ease-in-out infinite;
+}
+
+.hero-title-animated:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes hero-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(50, 117, 248, 0.3), 0 0 40px rgba(50, 117, 248, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(50, 117, 248, 0.5), 0 0 60px rgba(50, 117, 248, 0.25), 0 0 80px rgba(244, 114, 182, 0.15);
+  }
+}
+
 .hero-description {
   padding-bottom: 0.8rem;
   max-width: 400px;
@@ -638,10 +662,10 @@ html {
 /* Concepts Section */
 .concepts {
   background: transparent;
-  padding: 10rem 4rem;
+  padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 6rem;
 }
 
 .concept-block {
@@ -702,7 +726,7 @@ html {
 /* Founders Section */
 .founders-section {
   text-align: center;
-  margin-bottom: 12rem;
+  margin-bottom: 6rem;
 }
 
 .handwritten-wrapper {
@@ -840,7 +864,7 @@ html {
 .team-members-section {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1744,18 +1768,240 @@ html {
   flex-shrink: 0;
 }
 
+/* Larger social icons for better usability */
+.social-icon-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon-lg:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.social-icon-small.social-icon-lg {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+}
+
+/* Our Team unified section */
+.our-team {
+  margin-left: 0;
+  margin-right: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.our-team .subsection-label {
+  text-align: center;
+  min-width: auto;
+  padding-top: 0;
+}
+
+.our-team .subsection-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+}
+
+.team-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.team-cards-grid .team-card {
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.team-cards-grid .team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-cards-grid .team-info {
+  flex: none;
+}
+
+.team-cards-grid .team-social-links {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Contact info styles */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0;
+  transition: all 0.25s ease;
+  opacity: 0.9;
+}
+
+.contact-info-item:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.contact-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.contact-info-item:hover .contact-info-icon {
+  background: rgba(50, 117, 248, 0.2);
+}
+
+/* Subtle fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content,
+.concept-block,
+.founder-card,
+.team-card,
+.portfolio-logo,
+.supported-box {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+/* Stagger animations for grid items */
+.founders-grid .founder-card:nth-child(1) { animation-delay: 0.1s; }
+.founders-grid .founder-card:nth-child(2) { animation-delay: 0.2s; }
+.founders-grid .founder-card:nth-child(3) { animation-delay: 0.3s; }
+
+.team-cards-grid .team-card:nth-child(1) { animation-delay: 0.05s; }
+.team-cards-grid .team-card:nth-child(2) { animation-delay: 0.1s; }
+.team-cards-grid .team-card:nth-child(3) { animation-delay: 0.15s; }
+.team-cards-grid .team-card:nth-child(4) { animation-delay: 0.2s; }
+.team-cards-grid .team-card:nth-child(5) { animation-delay: 0.25s; }
+.team-cards-grid .team-card:nth-child(6) { animation-delay: 0.3s; }
+.team-cards-grid .team-card:nth-child(7) { animation-delay: 0.35s; }
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .concept-block,
   .founder-card,
   .team-card,
-  .portfolio-logo {
+  .portfolio-logo,
+  .about-content,
+  .supported-box {
     transition: none;
+    animation: none;
   }
   
   .concept-block:hover,
   .founder-card:hover,
   .team-card:hover {
     transform: none;
+  }
+  
+  .hero-title-animated {
+    animation: none;
+  }
+  
+  .contact-info-item:hover {
+    transform: none;
+  }
+}
+
+/* Mobile optimizations for contact info */
+@media (max-width: 768px) {
+  .contact-info {
+    margin-top: 1.5rem;
+  }
+  
+  .contact-info-item {
+    font-size: 0.85rem;
+  }
+  
+  .social-icon-lg {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-icon-small.social-icon-lg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .team-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .hero-title-molgan {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-molgan {
+    font-size: 2.5rem;
+  }
+  
+  .contact-info-item {
+    font-size: 0.8rem;
+  }
+  
+  .social-icon-lg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .social-icon-small.social-icon-lg {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .our-team .subsection-title {
+    font-size: 2rem;
+  }
+  
+  .team-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-cards-grid .team-card {
+    padding: 1.5rem;
   }
 }

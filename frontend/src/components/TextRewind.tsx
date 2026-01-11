@@ -24,17 +24,7 @@ const defaultShadows = {
 function TextRewind({ text = 'LINE', className = '', shadowColors = defaultShadows }: AnimatedTextProps) {
   const shadows = { ...defaultShadows, ...shadowColors }
 
-  const textShadowStyle = {
-    textShadow: `10px 10px 0px ${shadows.first},
-                 15px 15px 0px ${shadows.second},
-                 20px 20px 0px ${shadows.third},
-                 25px 25px 0px ${shadows.fourth},
-                 45px 45px 10px ${shadows.glow}`,
-  }
-
-  const noShadowStyle = {
-    textShadow: 'none',
-  }
+  const textShadowValue = `10px 10px 0px ${shadows.first}, 15px 15px 0px ${shadows.second}, 20px 20px 0px ${shadows.third}, 25px 25px 0px ${shadows.fourth}, 45px 45px 10px ${shadows.glow}`
 
   return (
     <div className="text-rewind-wrapper">
@@ -43,8 +33,10 @@ function TextRewind({ text = 'LINE', className = '', shadowColors = defaultShado
           'text-rewind',
           className,
         )}
-        style={textShadowStyle}
-        whileHover={noShadowStyle}
+        initial={{ textShadow: textShadowValue }}
+        animate={{ textShadow: textShadowValue }}
+        whileHover={{ textShadow: 'none' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         {text}
       </motion.div>
