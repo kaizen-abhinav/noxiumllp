@@ -3,5 +3,18 @@
   "installCommand": "cd frontend && npm install",
   "outputDirectory": "frontend/dist",
   "framework": "vite",
-  "devCommand": "cd frontend && npm run dev"
+  "devCommand": "cd frontend && npm run dev",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "noxusdynamics.vercel.app"
+        }
+      ],
+      "destination": "https://noxusdynamics.tech/$1",
+      "permanent": true
+    }
+  ]
 }
